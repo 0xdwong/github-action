@@ -7,7 +7,6 @@ const dotenv = require('dotenv')
 dotenv.config({ path: "./.env" })
 
 const mnemonic = process.env.MNEMONIC;
-const providerUrl = process.env.PROVIDER_URL;
 const scankey = process.env.ETHERSCAN_API_KEY;
 
 
@@ -47,7 +46,7 @@ module.exports = {
             },
         },
         main: {
-            url: providerUrl,
+            url: "https://rpc.flashbots.net",
             accounts: {
                 count: 1,
                 initialIndex: 0,
@@ -55,16 +54,6 @@ module.exports = {
                 path: "m/44'/60'/0'/0",
             },
             chainId: 1,
-        },
-        goerli: {
-            url: providerUrl,
-            accounts: {
-                count: 1,
-                initialIndex: 0,
-                mnemonic,
-                path: "m/44'/60'/0'/0",
-            },
-            chainId: 5,
         },
     },
     etherscan: {
