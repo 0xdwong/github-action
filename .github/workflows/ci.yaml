@@ -27,6 +27,7 @@ jobs:
         run: yarn test
         env:
           MNEMONIC: ${{ secrets.MNEMONIC }}
+          PRIVATEKEY: ${{ secrets.PRIVATEKEY }}
 
       - name: Generate coverage report
         run: yarn coverage
