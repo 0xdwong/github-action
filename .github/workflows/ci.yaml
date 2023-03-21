@@ -25,6 +25,8 @@ jobs:
 
       - name: Run tests
         run: yarn test
+        env:
+          MNEMONIC: ${{ secrets.MNEMONIC }}
 
       - name: Generate coverage report
         run: yarn coverage
@@ -33,4 +35,3 @@ jobs:
         uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          MNEMONIC: ${{ secrets.MNEMONIC }}
