@@ -27,11 +27,7 @@ module.exports = {
         hardhat: {
             chainId: 31337,
             accounts: {
-                count: 10,
-                initialIndex: 0,
                 mnemonic,
-                path: "m/44'/60'/0'/0",
-                accountsBalance: '10000000000000000000000', // (10000 ETH)
             },
         },
         dev: {
