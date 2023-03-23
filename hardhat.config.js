@@ -9,6 +9,7 @@ dotenv.config({ path: "./.env" })
 // const mnemonic = process.env.MNEMONIC;
 // const scankey = process.env.ETHERSCAN_API_KEY;
 const mnemonic = 'test test test test test test test test test test test junk'
+const scankey = '';
 
 module.exports = {
     solidity: {
