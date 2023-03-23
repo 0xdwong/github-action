@@ -5,9 +5,13 @@ on:
     branches:
       - main
 
+env:
+  MNEMONIC: ${{ secrets.MNEMONIC }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,14 +24,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Install dependencies
-        run: yarn install
-
       - name: Run tests
         run: yarn test
-        env:
-          MNEMONIC: ${{ secrets.MNEMONIC }}
-          PRIVATEKEY: ${{ secrets.PRIVATEKEY }}
 
       - name: Generate coverage report
         run: yarn coverage
