@@ -6,9 +6,9 @@ require('hardhat-abi-exporter');
 const dotenv = require('dotenv')
 dotenv.config({ path: "./.env" })
 
-const mnemonic = process.env.MNEMONIC;
-const scankey = process.env.ETHERSCAN_API_KEY;
-
+// const mnemonic = process.env.MNEMONIC;
+// const scankey = process.env.ETHERSCAN_API_KEY;
+const mnemonic = 'test test test test test test test test test test test junk'
 
 module.exports = {
     solidity: {
