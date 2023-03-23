@@ -1,8 +1,8 @@
+require('dotenv').config()
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require('solidity-coverage');
 require('hardhat-abi-exporter');
-require('dotenv').config()
 
 const mnemonic = process.env.MNEMONIC;
 const scankey = process.env.ETHERSCAN_API_KEY;
