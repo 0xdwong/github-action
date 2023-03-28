@@ -7,6 +7,6 @@ contract Test {
     string public foo;
 
     function setFoo() external {
-        foo = "barrrrr";
+        foo = "bar";
     }
 }
