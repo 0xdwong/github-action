@@ -1,0 +1,10 @@
+{
+    "apps": [
+        {
+            "name": "action-nodejs-app",
+            "script": "src/index.js",
+            "exec_mode": "cluster",
+            "instances": 1
+        }
+    ]
+}
