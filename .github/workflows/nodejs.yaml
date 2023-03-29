@@ -12,7 +12,7 @@ env:
   SSH_PRIVATE_KEY_PHRASE:  ${{ secrets.KEY_PASSPHRASE }}
   REMOTE_SERVER: ${{ secrets.REMOTE_SERVER }}
   REMOTE_USER: ${{ secrets.REMOTE_USER }}
-  REMOTE_DIR: "/home/cdeer/code/practice/github-action/packages/nodejs_app"
+  REMOTE_DIR: "/home/ec2-user/code/github-action/packages/nodejs_app"
 
 jobs:
   deploy:
@@ -24,9 +24,8 @@ jobs:
           host: ${{ env.REMOTE_SERVER }}
           username: ${{ env.REMOTE_USER }}
           key: ${{ env.SSH_PRIVATE_KEY }}
-          passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
             git pull
             yarn install --frozen-lockfile
-            pm2 restart index.js
+            pm2 restart pm2.json
