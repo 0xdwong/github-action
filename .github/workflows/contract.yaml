@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     paths:
-      - 'packages/contract/**'
+      - 'packages/contract/contracts/**'
     branches:
       - main
 
