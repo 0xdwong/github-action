@@ -3,7 +3,7 @@ name: timer
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '/5 * * * *'
+    - cron: '0/5 * * * *'
 
 defaults:
   run:
