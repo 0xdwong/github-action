@@ -9,6 +9,7 @@ on:
 
 env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SSH_PRIVATE_KEY_PHRASE:  ${{ secrets.KEY_PASSPHRASE }}
   REMOTE_SERVER: ${{ secrets.REMOTE_SERVER }}
   REMOTE_USER: ${{ secrets.REMOTE_USER }}
   REMOTE_DIR: "/home/cdeer/code/practice/github-action/packages/nodejs_app"
@@ -23,7 +24,7 @@ jobs:
           host: ${{ env.REMOTE_SERVER }}
           username: ${{ env.REMOTE_USER }}
           key: ${{ env.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.KEY_PASSPHRASE }}
+          passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
             git pull
