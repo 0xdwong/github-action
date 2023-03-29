@@ -26,6 +26,6 @@ jobs:
           passphrase: ${{ secrets.KEY_PASSPHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
-            git pull origin master
+            git pull
             yarn install --frozen-lockfile
             pm2 restart index.js
