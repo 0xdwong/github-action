@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     paths:
-      - 'contracts/**'
+      - 'packages/contract/**'
     branches:
       - main
 
@@ -24,7 +24,7 @@ jobs:
           node-version: "16.x"
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Run tests
         run: yarn test
