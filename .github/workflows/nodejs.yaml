@@ -1,4 +1,4 @@
-name: nodejs service
+name: nodejs deplpy
 
 on:
   push:
