@@ -1,0 +1,30 @@
+name: timer
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '/5 * * * *'
+
+defaults:
+  run:
+    working-directory: ./packages/timer
+
+jobs:
+  run:
+    name: Send heartbeat and record result
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+    
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: run script
+        env:
+          PROVIDER_KEY: ${{ secrets.PROVIDER_KEY }}
+        run: node scripts/heartbeat.js
