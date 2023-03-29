@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "contract:test": "yarn workspace contract test",
-    "contract:coverage": "yarn workspace contract coverage",
+    "contract:coverage": "yarn workspace contract coverage"
   },
   "author": "0xdwong@gmail.com",
   "license": "ISC",
