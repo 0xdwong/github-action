@@ -1,0 +1,30 @@
+name: nodejs service
+
+on:
+  push:
+    paths:
+      - 'packages/nodejs_app/src/**'
+    branches:
+      - main
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  REMOTE_SERVER: ${{ secrets.REMOTE_SERVER }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+  REMOTE_DIR: "/home/cdeer/code/practice/github-action/packages/nodejs_app"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.REMOTE_SERVER }}
+          username: ${{ env.REMOTE_USER }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ env.REMOTE_DIR }}
+            git pull origin master
+            yarn install --frozen-lockfile
+            pm2 restart index.js
