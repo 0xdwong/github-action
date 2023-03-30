@@ -12,7 +12,7 @@ env:
   SSH_PRIVATE_KEY_PHRASE:  ${{ secrets.KEY_PASSPHRASE }}
   REMOTE_SERVER: ${{ secrets.REMOTE_SERVER }}
   REMOTE_USER: ${{ secrets.REMOTE_USER }}
-  REMOTE_DIR: "/home/ec2-user/code/github-action/packages/nodejs_app"
+  REMOTE_DIR: "/home/pili/code/github-action/packages/nodejs_app"
 
 jobs:
   deploy:
