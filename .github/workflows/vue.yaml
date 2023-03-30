@@ -18,6 +18,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+       - name: Setup environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+
       - name: Deploy code
         uses: appleboy/ssh-action@master
         with:
