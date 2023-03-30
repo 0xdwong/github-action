@@ -32,6 +32,7 @@ jobs:
           passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
+            nvm use 16
             node -v
             git pull
             yarn install
