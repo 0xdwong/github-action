@@ -1,0 +1,29 @@
+name: Manual Trigger
+
+on:
+  # 手动触发事件
+  workflow_dispatch:
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SSH_PRIVATE_KEY_PHRASE:  ${{ secrets.KEY_PASSPHRASE }}
+  REMOTE_SERVER: ${{ secrets.REMOTE_SERVER }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+  REMOTE_DIR: "/home/pili/code/github-action/packages/nodejs_app"
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.REMOTE_SERVER }}
+          username: ${{ env.REMOTE_USER }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
+          script: |
+            cd ${{ env.REMOTE_DIR }}
+            git pull
+            yarn install --frozen-lockfile
+            pm2 restart pm2.json
