@@ -33,7 +33,7 @@ describe('Test', () => {
 
             let foo = await contractInstance.foo();
 
-            expect(foo).to.be.equal('bar');
+            expect(foo).to.be.equal('bar111');
         });
     })
 
