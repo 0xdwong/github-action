@@ -16,7 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div> -->
     <div>
-      <h1>Hello world1111</h1>
+      <h1>Hello world</h1>
 
       </div>
   </header>
