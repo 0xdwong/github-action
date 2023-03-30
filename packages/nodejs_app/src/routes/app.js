@@ -3,7 +3,7 @@ async function ping(ctx) {
 }
 
 async function hi(ctx) {
-    const msg = 'foo1';
+    const msg = 'foo2';
     let resp = { 'code': '1', 'msg': msg };
     ctx.response.body = resp;
 }
