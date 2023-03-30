@@ -24,6 +24,7 @@ jobs:
           host: ${{ env.REMOTE_SERVER }}
           username: ${{ env.REMOTE_USER }}
           key: ${{ env.SSH_PRIVATE_KEY }}
+          passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
             git pull
