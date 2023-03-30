@@ -22,7 +22,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.GIT_PRIVATE_KEY }}
-          run: echo "${{ secrets.GIT_PRIVATE_KEY_PASSWORD }}" | ssh-add -
+        run: echo "${{ secrets.GIT_PRIVATE_KEY_PASSWORD }}" | ssh-add -
 
 
       - name: Deploy code
