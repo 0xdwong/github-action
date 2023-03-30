@@ -34,8 +34,7 @@ jobs:
             cd ${{ env.REMOTE_DIR }}
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm use 16            
-            node -v
+            nvm use 16
             git pull
             yarn install
             yarn build
