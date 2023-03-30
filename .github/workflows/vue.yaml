@@ -26,6 +26,7 @@ jobs:
       - name: Deploy code
         uses: appleboy/ssh-action@master
         with:
+          node-version: "16.x"
           host: ${{ env.REMOTE_SERVER }}
           username: ${{ env.REMOTE_USER }}
           key: ${{ env.SSH_PRIVATE_KEY }}
