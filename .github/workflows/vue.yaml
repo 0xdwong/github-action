@@ -28,5 +28,5 @@ jobs:
           script: |
             cd ${{ env.REMOTE_DIR }}
             git pull
-            yarn install --frozen-lockfile
+            yarn install
             yarn build
