@@ -33,5 +33,5 @@ jobs:
           script: |
             cd ${{ env.REMOTE_DIR }}
             git pull
-            npm install
-            npm run build
+            yarn install
+            yarn build
