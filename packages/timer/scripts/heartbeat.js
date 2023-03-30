@@ -8,7 +8,6 @@ async function main(){
         "method": "GET",
         "url": "https://api.decert.me/health",
         "headers": {
-            "address": "0x4dA00F03E056ff7d37223c6dB7dc2690dcC99dD4",
             "Content-Type": "application/json; charset=utf-8"
         }
     })
