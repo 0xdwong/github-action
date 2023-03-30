@@ -32,6 +32,7 @@ jobs:
           passphrase: ${{ env.SSH_PRIVATE_KEY_PHRASE }}
           script: |
             cd ${{ env.REMOTE_DIR }}
+            node -v
             git pull
             yarn install
             yarn build
