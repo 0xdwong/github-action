@@ -75,11 +75,11 @@ jobs:
 
 
 ### 更多例子
-- 提交到main分支时自动测试，生成测试报告
-- 定时运行脚本检测线上服务心跳
-- 自动部署 nodejs 项目
-- 手动触发更新部署 nodejs 项目
-- 自动打包部署 vue 项目
+- [提交到main分支时自动测试，生成测试报告](./.github/workflows/contract.yaml)
+- [定时运行脚本检测线上服务心跳](./.github/workflows/timer.yaml)
+- [自动部署 nodejs 项目](./.github/workflows/nodejs.yaml)
+- [手动触发更新部署 nodejs 项目](./.github/workflows/manual.yaml)
+- [自动打包部署 vue 项目](./.github/workflows/vue.yaml)
 
 
 ## 总结
