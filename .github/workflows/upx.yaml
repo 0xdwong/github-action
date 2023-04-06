@@ -21,5 +21,5 @@ jobs:
           UPYUN_SERVICE: ${{ env.UPYUN_SERVICE }}
           UPYUN_OPERATOR: ${{ env.UPYUN_OPERATOR }}
         run: |
-          upx login $UPYUN_SERVICE   $UPYUN_OPERATOR  ${{ secrets.UPYUN_PASSWORD }} && upx sync ./imgs .
+          upx login $UPYUN_SERVICE   $UPYUN_OPERATOR  ${{ secrets.UPYUN_PASSWORD }}
       
