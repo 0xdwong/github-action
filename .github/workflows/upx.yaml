@@ -20,9 +20,6 @@ jobs:
         env:
           UPYUN_SERVICE: ${{ env.UPYUN_SERVICE }}
           UPYUN_OPERATOR: ${{ env.UPYUN_OPERATOR }}
-        with:
-          script: |
-            upx login ${{ UPYUN_SERVICE}} ${{ $UPYUN_OPERATOR}} ${{ secrets.UPYUN_PASSWORD }}
-            upx sync ./imgs .
+        run: upx login ${{ UPYUN_SERVICE}} ${{ $UPYUN_OPERATOR}} ${{ secrets.UPYUN_PASSWORD }} && upx sync ./imgs .
 
       
