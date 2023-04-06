@@ -17,7 +17,6 @@ jobs:
           chmod +x upx
 
       - name: Sync files to UPYUN
-        env:
         run: ./upx login ${{ vars.UPYUN_SERVICE }} ${{ vars.UPYUN_OPERATOR }} ${{ secrets.UPYUN_PASSWORD }}  && ./upx sync ./imgs .
 
       
