@@ -13,7 +13,7 @@ jobs:
 
       - name: Install upx tool
         run: |
-          curl -LJO --progress-bar https://collection.b0.upaiyun.com/softwares/upx/upx_0.3.6_linux_x86_64.tar.gz && tar xvzf 6_linux_x86_64.tar.gz
+          curl -LJO --progress-bar https://collection.b0.upaiyun.com/softwares/upx/upx_0.3.6_linux_x86_64.tar.gz && tar xvzf upx_0.3.6_linux_x86_64.tar.gz.tar.gz
           chmod +x upx
 
       - name: Sync files to UPYUN
