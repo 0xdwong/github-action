@@ -1,0 +1,37 @@
+name: upload file to upx
+
+on:
+  # 手动触发事件
+  workflow_dispatch:
+
+jobs:
+  upx-uoloader:
+    runs-on: ubuntu-latest
+    env:
+      UPYUN_RELEASE_BUCKET: ${{ secrets.UPYUN_RELEASE_BUCKET }}
+      UPYUN_RELEASE_USERNAME: ${{ secrets.UPYUN_RELEASE_USERNAME }}
+      UPYUN_RELEASE_PASSWORD: ${{ secrets.UPYUN_RELEASE_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --user upx
+
+      - name: Sync files to UPYUN
+        env:
+          UPYUN_SERVICE: ${{ env.UPYUN_SERVICE }}
+          UPYUN_OPERATOR: ${{ env.UPYUN_OPERATOR }}
+        run: |
+          upx --service $UPYUN_SERVICE \
+              --operator $UPYUN_OPERATOR \
+              --password ${{ secrets.UPYUN_PASSWORD }} \
+              sync ./imgs .
+      
